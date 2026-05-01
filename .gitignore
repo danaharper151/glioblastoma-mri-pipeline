@@ -1,0 +1,25 @@
+# Generated outputs — not committed to repo
+data/output/
+data/figures/
+data/crops/
+
+# Image files — dataset must be downloaded separately from Kaggle
+*.jpg
+*.jpeg
+*.png
+*.tif
+*.tiff
+
+# Metrics CSV
+*.csv
+
+# MATLAB session files
+*.asv
+*.m~
+*.mex*
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
