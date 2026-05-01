@@ -1,7 +1,7 @@
 # Glioblastoma MRI Enhancement Pipeline
 
 **Classical image processing pipeline for brain tumor MRI enhancement and brain extraction,
-built in MATLAB for clinical radiation therapy planning applications. Developed for Advanced Image Analysis Techniques COMP 510**
+built in MATLAB for clinical radiation therapy planning applications.**
 
 ---
 
