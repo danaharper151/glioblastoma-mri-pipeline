@@ -125,7 +125,7 @@ license('test', 'Image_Toolbox')   % returns 1 if available
 ## Usage
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/glioblastoma-mri-pipeline.git
+git clone https://github.com/danaharper151/glioblastoma-mri-pipeline.git
 cd glioblastoma-mri-pipeline
 ```
 
@@ -194,7 +194,8 @@ separability across the entire brain region, which is exactly what enhancement i
 ## Authors
 
 Dana Harper & Arya Singh
-COMP 510 — Advanced Image Analysis Techniques
+Anthropic Claude Sonnet 4.6 - build assistance and debugging
+COMP 510 - Advanced Image Analysis Techniques
 Instructor: Dr. Vedang Chauhan | April 2026
 
 ---
