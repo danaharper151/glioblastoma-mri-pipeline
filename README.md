@@ -12,15 +12,13 @@ MRI scans of glioblastoma multiforme (GBM) to improve tumor boundary visibility 
 radiation therapy planning. Every stage uses classical digital image processing techniques:
 no machine learning or neural networks.
 
-Developed as the final project for COMP 510 (Advanced Image Analysis Techniques).
+Developed as our final project for COMP 510 Advanced Image Analysis Techniques.
 
 **Clinical motivation:** Radiation therapy for GBM requires precise manual contouring of
 the tumor boundary on MRI. Raw scans suffer from low local contrast, intensity
 inhomogeneity, and acquisition noise. When boundaries are unclear, oncologists must expand
 the treatment margin, irradiating healthy brain tissue that could otherwise be spared.
-This pipeline addresses each artifact systematically using spatial and frequency domain
-processing, then performs brain extraction — the standard first step in clinical
-neuroimaging workflows.
+This pipeline addresses each artifact systematically using brain extraction, spatial, and frequency domain processing. 
 
 ---
 
@@ -125,7 +123,7 @@ license('test', 'Image_Toolbox')   % returns 1 if available
 ## Usage
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/glioblastoma-mri-pipeline.git
+git clone https://github.com/danaharper151/glioblastoma-mri-pipeline.git
 cd glioblastoma-mri-pipeline
 ```
 
@@ -193,9 +191,10 @@ separability across the entire brain region, which is exactly what enhancement i
 
 ## Authors
 
-Dana Harper & Arya Singh
-COMP 510 — Advanced Image Analysis Techniques
-Instructor: Dr. Vedang Chauhan | April 2026
+Dana Harper & Arya Singh   
+Anthropic Claude Sonnet 4.6 - build assistance and debugging   
+COMP 510 - Advanced Image Analysis Techniques   
+Instructor: Dr. Vedang Chauhan | April 2026   
 
 ---
 
