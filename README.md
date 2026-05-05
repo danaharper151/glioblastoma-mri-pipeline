@@ -49,27 +49,27 @@ Evaluated on 10 glioblastoma MRI scans from the Kaggle Brain Tumor MRI Dataset:
 
 | Metric | Value |
 |--------|-------|
-| **Avg ICR improvement** | **+59.3%** |
-| Avg PSNR (CLAHE vs original) | 18.09 dB |
-| Avg SSIM (CLAHE vs original) | 0.484 |
-| JPEG Q90 PSNR range | 41.2 - 43.9 dB |
-| JPEG Q90 SSIM range | 0.991 - 0.995 |
-| Avg brain area | 122,536 px (range: 84,674 - 184,615 px) |
+| **Avg ICR improvement** | **+65.9%** |
+| Avg PSNR (CLAHE vs original) | 17.50 dB |
+| Avg SSIM (CLAHE vs original) | 0.521 |
+| JPEG Q90 PSNR range | 41.5 – 43.9 dB |
+| JPEG Q90 SSIM range | 0.991 – 0.995 |
+| Avg brain area | 134,144 px (range: 84,674 – 184,615 px) |
 
 ### Per-Image Results
 
 | Image | PSNR (dB) | SSIM | ICR Before | ICR After | ICR Improvement |
 |-------|-----------|------|------------|-----------|----------------|
 | Te-gl_1.jpg   | 21.26 | 0.582 | 0.480 | 0.782 | +63.0% |
+| Te-gl_110.jpg | 17.06 | 0.523 | 0.473 | 0.811 | +71.5% |
+| Te-gl_114.jpg | 15.86 | 0.533 | 0.483 | 0.828 | +71.5% |
 | Te-gl_115.jpg | 19.36 | 0.569 | 0.375 | 0.741 | +97.7% |
-| Te-gl_17.jpg  | 15.10 | 0.472 | 0.563 | 0.818 | +45.4% |
+| Te-gl_134.jpg | 16.36 | 0.622 | 0.413 | 0.812 | +96.8% |
 | Te-gl_18.jpg  | 16.51 | 0.329 | 0.518 | 0.723 | +39.6% |
-| Te-gl_60.jpg  | 16.32 | 0.456 | 0.495 | 0.786 | +58.5% |
+| Te-gl_261.jpg | 15.47 | 0.440 | 0.447 | 0.783 | +75.0% |
 | Te-gl_62.jpg  | 16.80 | 0.483 | 0.754 | 0.894 | +18.7% |
 | Te-gl_84.jpg  | 19.62 | 0.542 | 0.509 | 0.838 | +64.5% |
-| Te-gl_9.jpg   | 18.24 | 0.376 | 0.420 | 0.765 | +82.2% |
 | Te-gl_90.jpg  | 16.72 | 0.588 | 0.502 | 0.808 | +61.0% |
-| Te-no_400.jpg | 21.00 | 0.446 | 0.592 | 0.965 | +62.9% |
 
 ### Compression Analysis
 
@@ -78,9 +78,9 @@ demonstrating suitability for clinical PACS archiving.
 
 | JPEG Quality | PSNR Range | SSIM Range | Clinical Interpretation |
 |-------------|------------|------------|------------------------|
-| Q=10 | 26.6 - 29.5 dB | 0.812 - 0.926 | Significant loss |
-| Q=50 | 32.8 - 35.8 dB | 0.934 - 0.981 | Acceptable quality |
-| Q=90 | 41.2 - 43.9 dB | 0.991 - 0.995 | Near-lossless, diagnostic quality preserved |
+| Q=10 | 27.9 – 29.5 dB | 0.812 – 0.926 | Significant loss |
+| Q=50 | 33.8 – 35.9 dB | 0.934 – 0.981 | Acceptable quality |
+| Q=90 | 41.5 – 43.9 dB | 0.991 – 0.995 | Near-lossless, diagnostic quality preserved |
 
 ---
 
@@ -132,7 +132,7 @@ Place MRI images into data/input/, then in MATLAB:
 ```matlab
 demo_single_image       % test on one image first — 8-panel stage visualization
 brain_tumor_pipeline    % process all images in data/input/
-view_results_tabbed     % interactive before/after viewer (run after pipeline)
+results     % interactive before/after viewer (run after pipeline)
 ```
 
 ---
@@ -157,7 +157,7 @@ view_results_tabbed     % interactive before/after viewer (run after pipeline)
 glioblastoma-mri-pipeline/
 ├── brain_tumor_pipeline.m    # Main pipeline — all 12 stages
 ├── demo_single_image.m       # Single image demo with 8-panel visualization
-├── view_results_tabbed.m     # Interactive tabbed before/after viewer
+├── results.m     # Interactive before/after/hot colormap viewer
 ├── README.md
 ├── data/
 │   └── input/
