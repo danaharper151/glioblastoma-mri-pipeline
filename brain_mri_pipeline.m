@@ -1,5 +1,5 @@
 % =========================================================================
-%  BRAIN TUMOR MRI ENHANCEMENT PIPELINE  —  FINAL VERSION
+%  BRAIN TUMOR MRI ENHANCEMENT PIPELINE  
 %  COMP 510 | Digital Image Processing | Final Project
 %
 %  Dataset : Kaggle Brain Tumor MRI Dataset (Masoud Nickparvar)
@@ -37,7 +37,7 @@
 %    other, which is exactly what CLAHE and frequency enhancement improve.
 %
 %  Required toolbox : Image Processing Toolbox
-%  Run              : press F5 or type brain_tumor_pipeline in Command Window
+%  Run              : press F5 or type brain_mri_pipeline in Command Window
 % =========================================================================
 
 clc; clear; close all;
@@ -561,7 +561,8 @@ function save_pipeline_figure(orig, clahe, spatial, freq, final, ...
             'FontSize',13, 'FontWeight','bold');
 
     outFile = fullfile(out_dir, [base '_pipeline.png']);
-    print(fig, outFile, '-dpng', '-r300');   % 300 DPI — crisp on screen and in slides
+    drawnow;                                  % flush graphics buffer
+    print(fig, outFile, '-dpng', '-r300');
     close(fig);
 end
 
@@ -615,6 +616,7 @@ function save_brain_figure(orig, enhanced, color_img, brain_mask, ...
             'FontSize',13, 'FontWeight','bold');
 
     outFile = fullfile(out_dir, [base '_segmentation.png']);
+    drawnow;                                  % flush graphics buffer
     print(fig, outFile, '-dpng', '-r300');
     close(fig);
 end

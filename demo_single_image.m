@@ -20,10 +20,10 @@ clc; clear; close all;
 % -------------------------------------------------------------------------
 %  CONFIGURATION — edit this line only
 % -------------------------------------------------------------------------
-IMAGE_PATH = 'data/input/Te-gl_1.jpg';    % <-- change to your image filename
+IMAGE_PATH = 'data/input/Te-gl_216.jpg';    % <-- change to your image filename
 
 % =========================================================================
-%  PARAMETERS  (must match brain_tumor_pipeline.m)
+%  PARAMETERS  (must match brain_mri_pipeline.m)
 % =========================================================================
 CLAHE_CLIP     = 0.015;
 CLAHE_TILES    = [8 8];
@@ -163,3 +163,21 @@ fprintf('  ICR  original -> enhanced: %.3f -> %.3f (%+.1f%%)\n', ...
 fprintf('  Brain area               : %d px\n',      round(b_area));
 fprintf('  Brain perimeter          : %.0f px\n',    b_perim);
 fprintf('  Brain eq. diameter       : %.1f px\n\n',  b_eqdiam);
+
+%% Adjustments for bright white tumor when unresponsive to original settings
+% Reduce CLAHE aggressiveness — don't boost surrounding tissue as much
+% CLAHE_CLIP     = 0.005;    % was 0.015 — much gentler local contrast
+% Reduce sharpening — the tumor boundary is already sharp
+% UNSHARP_AMOUNT = 0.4;      % was 0.85
+% Lower gamma — don't darken midtones as aggressively
+% GAMMA          = 1.1;      % was 1.85
+% Homomorphic: raise gL closer to 1 to PRESERVE illumination variation
+% rather than compressing it — this keeps the tumor bright
+% HMF_GL         = 0.85;    % was 0.6 — critical fix for this image
+% HMF_GH         = 1.2;     % was 1.5
+% Gentler contrast stretch
+% STRETCH_LOW    = 0.01;     % was 0.02
+% STRETCH_HI     = 0.99;     % was 0.98
+%
+%
+%%
