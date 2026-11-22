@@ -1,24 +1,14 @@
 # Glioblastoma MRI Enhancement Pipeline
 
-**Classical image processing pipeline for brain tumor MRI enhancement and brain extraction,
-built in MATLAB for clinical radiation therapy planning applications.**
+**A 12-stage classical image processing pipeline in MATLAB for brain extraction and contrast enhancement on T1-weighted glioblastoma MRI scans—built with zero machine learning.**
 
 ---
 
 ## Overview
 
-This project implements a 12-stage image processing pipeline that enhances raw T1-contrast
-MRI scans of glioblastoma multiforme (GBM) to improve tumor boundary visibility for
-radiation therapy planning. Every stage uses classical digital image processing techniques:
-no machine learning or neural networks.
+This project implements a deterministic, 12-stage image processing pipeline designed to improve boundary visibility and structural clarity in raw T1-contrast MRI scans of glioblastoma multiforme (GBM). Every stage relies exclusively on classical digital image processing rather than neural networks or learned weights, developed as the final project for **COMP 510: Advanced Image Analysis Techniques**.
 
-Developed as our final project for COMP 510 Advanced Image Analysis Techniques.
-
-**Clinical motivation:** Radiation therapy for GBM requires precise manual contouring of
-the tumor boundary on MRI. Raw scans suffer from low local contrast, intensity
-inhomogeneity, and acquisition noise. When boundaries are unclear, oncologists must expand
-the treatment margin, irradiating healthy brain tissue that could otherwise be spared.
-This pipeline addresses each artifact systematically using brain extraction, spatial, and frequency domain processing. 
+**Problem & technical approach:** Raw T1-contrast GBM scans exhibit low local contrast, intensity non-uniformity, and acquisition noise that obscure lesion boundaries. Rather than relying on data-driven segmentation models, this pipeline targets each degradation mode modularly across spatial, morphological, and frequency domains—combining skull stripping/brain extraction with targeted filtering and contrast enhancement to isolate relevant tissue structure.
 
 ---
 
@@ -191,10 +181,21 @@ separability across the entire brain region, which is exactly what enhancement i
 
 ## Authors
 
-Dana Harper & Arya Singh   
-Anthropic Claude Sonnet 4.6 - build assistance and debugging   
-COMP 510 - Advanced Image Analysis Techniques   
-Instructor: Dr. Vedang Chauhan | April 2026   
+* **Dana Harper** *github.com/danaharper151*
+* **Arya Singh**
+
+**Course:** COMP 510 – Advanced Image Analysis Techniques  
+**Institution:** California State University Channel Islands (CSUCI)  
+**Instructor:** Dr. Vedang Chauhan  
+**Date:** April 2026  
+
+---
+
+## Acknowledgments
+
+* **Dr. Vedang Chauhan & CSUCI:** For course instruction, guidance on classical image processing methodologies, and academic support throughout the project.
+* **Dataset:** *Kaggle Brain Tumor MRI Dataset by Masoud Nickparvar.*
+* **Development Tools:** Anthropic Claude (Sonnet 4.6) was used for code debugging and documentation assistance. 
 
 ---
 
